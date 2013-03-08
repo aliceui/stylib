@@ -1,0 +1,19 @@
+{
+  "name": "Alib",
+  "version": "0.0.1",
+  "root": "",
+  "description": "样式库搭建模板",
+  "homepage": "http://aliceui.org/Alib",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aliceui/Alib"
+  },
+  "bugs": {
+    "url": "https://github.com/aliceui/Alib/issues"
+  },
+  "dependencies": {
+    "box": "alice/box/1.0.0/box.css",
+    "button": "alice/button/1.0.0/button.css",
+    "nav": "alice/nav/1.0.0/nav.css"
+  }
+}
