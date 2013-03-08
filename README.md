@@ -1,88 +1,15 @@
-<!DOCTYPE HTML>
-<html lang="zh">
-    <head>
-        <meta charset="UTF-8">
-        <title>Alib</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="nico 0.2.3" />
-        <link type="image/x-icon" href="./static/css/favicon.ico" rel="icon">
-        <link rel="stylesheet" href="./static/css/normalize.css" />
-        <link rel="stylesheet" href="./static/css/site.css" />
-        <link rel="stylesheet" href="./static/css/solarized.css" />    
-        <link rel="stylesheet" href="./static/style.css" />
-        <script src="http://static.alipayobjects.com/seajs/1.3.1/sea.js"></script>
-        <script src="./static/js/arale-helper.js"></script>
-        <script src="./static/js/site.js"></script><script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36247332-1']);
-  _gaq.push(['_trackPageview']);
+# 样式库
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = 'https://ssl.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-<script>
-  (function() {
-    var data;
-    seajs._package = data = {"name":"Alib","version":"0.0.1","root":"","description":"样式库搭建模板","homepage":"http://aliceui.org/Alib","repository":{"type":"git","url":"https://github.com/aliceui/Alib"},"bugs":{"url":"https://github.com/aliceui/Alib/issues"},"dependencies":{"box":"alice/box/1.0.0/box.css","button":"alice/button/1.0.0/button.css","nav":"alice/nav/1.0.0/nav.css"}}
-    data.dependencies && (delete data.dependencies['$'])
-    data.devDependencies && (delete data.devDependencies['$'])
+- order: 1
 
-    seajs.config({ alias: data.dependencies })
-    seajs.config({ alias: data.devDependencies })
-    seajs.config({ alias: {} })
+---
 
-    // for alice
-    for(var dep in data.dependencies) {
-        // 如果依赖的是样式模块
-        if (data.dependencies[dep].indexOf('.css') > 0) {
-            seajs.use(dep);
-        }
-    }
+> Life is like a box of chocolate. 
+*「 Forrest Gump 」1994*
 
-  })();
-</script>
-        <!--[if lt IE 9]>
-        <script src="./static/js/html5shiv.js"></script>
-        <![endif]-->
-        
-        <script>
-        seajs.use(['arale/fixed/1.0.0/fixed'], function(Fixed) {
-            Fixed('.side-area', 20);
-        });
-        </script>
-    </head>
-    <body>
-        <div id="body-wrapper">
-            <div class="nav-area">
-                <ol class="main-nav">
-                    <i class="iconfont">~</i>
-                    <li><a href="./">样式库</a></li>
-                    <li><a href="./docs/document.html">文档一</a></li>
-                    <li><a href="./docs/document2.html">文档二</a></li>
-                    <li class="alice-ui"><a href="http://aliceui.org/">AliceUI</a></li>                   
-                </ol>
-            </div>
-            <div class="main-area">
-                <div class="side-area">
-                    <ul>
-                        <li class="side-loading"><img width="160" alt="加载中..." src="/static/loading.gif"></li>
-                    </ul>
-                </div>
-                <script type="text/template" id="list-template">
-                    <li><a href="#"><i class="iconfont" title="单箭头右">&#x00E5;</i></a></li>
-                </script>
-                <div class="content-area">
-                    <h1>样式库</h1>
-                    <div class="content"><blockquote>
-<p>Life is like a box of chocolate. 
-<em>「 Forrest Gump 」1994</em></p>
-</blockquote>
+这里是一套按照 Alice 规范搭建的的样式模块库。
+找到你需要的模块，复制代码，然后享受生活去吧。
 
-<p>这里是一套按照 Alice 规范搭建的的样式模块库。
-找到你需要的模块，复制代码，然后享受生活去吧。</p>
 
 <script type="text/template" id="alice-module">
     <div class="alice-module">
@@ -194,8 +121,8 @@ a {
 
 <div class="alice-modules"></div>
 
-<p><link type="text/css" rel="stylesheet" media="screen" href="../static/tomorrow.css">
-<script src="../static/google-code-prettify/run_prettify.js"></script></p>
+<link type="text/css" rel="stylesheet" media="screen" href="../static/tomorrow.css">
+<script src="../static/google-code-prettify/run_prettify.js"></script>
 
 <script>
 seajs.use(['$', 'gallery/underscore/1.4.3/underscore'], function($, _) {
@@ -215,7 +142,7 @@ seajs.use(['$', 'gallery/underscore/1.4.3/underscore'], function($, _) {
         }
     });
 
-    $.getJSON('../package.json', function(data) {
+    $.getJSON('package.json', function(data) {
         var deps = _.pairs(data.dependencies);
         _.each(deps, function(dep) {
             var moduleNode = $($('#alice-module').html());
@@ -286,19 +213,3 @@ seajs.use(['$', 'gallery/underscore/1.4.3/underscore'], function($, _) {
 
 });
 </script>
-</div>
-                </div>
-            </div>
-        </div>
-        <div id="footer-wrapper">
-            <footer>
-            <p class="powered"><a href="http://aralejs.org">Arale</a> •
-<a href="http://aliceui.org">Alice</a> •
-<a href="http://seajs.org">SeaJS</a> •
-<a href="https://github.com/spmjs/spm">spm</a> •
-<a href="http://lab.lepture.com/nico/">nico</a>
-            </p>
-            </footer>
-        </div>
-    </body>
-</html>
