@@ -1,0 +1,28 @@
+THEME = $(HOME)/.spm/themes/alice
+
+build-doc:
+	@nico build -v -C $(THEME)/nico.js
+
+debug:
+	@nico server -v -C $(THEME)/nico.js --watch debug
+
+server:
+	@nico server -v -C $(THEME)/nico.js
+
+watch:
+	@nico server -v -C $(THEME)/nico.js --watch
+
+name = `cat package.json | grep name | awk -F'"' '{print $$4}'`
+html = _site
+tmpfile = tmp.tar.gz
+publish:
+    @nico build -v -C $(THEME)/nico.js
+    @rm -f ${tmpfile}
+    @tar --exclude='.git/*' -czf ${tmpfile} ${html}
+    @curl -F name=${name} -F file=@${tmpfile} http://site.alipay.im/repository/upload/alipay-css
+    @rm -f ${tmpfile}
+
+clean:
+	@rm -fr _site
+
+.PHONY: build-doc debug server publish clean

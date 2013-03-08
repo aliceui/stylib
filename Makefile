@@ -18,4 +18,4 @@ publish: clean build-doc
 clean:
 	@rm -fr _site
 
-.PHONY: build-doc debug server publish clean test coverage
+.PHONY: build-doc debug server publish clean
