@@ -1,16 +1,16 @@
 THEME = $(HOME)/.spm/themes/alice
 
 build-doc:
-	@nico build -v -C $(THEME)/nico.js
+@nico build -v -C $(THEME)/nico.js
 
 debug:
-	@nico server -v -C $(THEME)/nico.js --watch debug
+@nico server -v -C $(THEME)/nico.js --watch debug
 
 server:
-	@nico server -v -C $(THEME)/nico.js
+@nico server -v -C $(THEME)/nico.js
 
 watch:
-	@nico server -v -C $(THEME)/nico.js --watch
+@nico server -v -C $(THEME)/nico.js --watch
 
 name = `cat package.json | grep name | awk -F'"' '{print $$4}'`
 html = _site
@@ -23,6 +23,6 @@ publish:
     @rm -f ${tmpfile}
 
 clean:
-	@rm -fr _site
+@rm -fr _site
 
 .PHONY: build-doc debug server publish clean
