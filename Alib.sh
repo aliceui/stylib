@@ -1,7 +1,10 @@
 #!/bin/bash
 
-name = Alib-template
+name=Alib-template
 git clone git@github.com:aliceui/Alib.git $name
-rm -rf $name/.git
-rm Alib-template/Makefile.alipay
-git init $name
+cd $name
+rm -rf .git
+rm Makefile.alipay Alib.sh Alib-alipay.sh
+git init
+git add .
+git commit -am 'first commit'
