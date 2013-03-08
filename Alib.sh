@@ -1,6 +1,7 @@
 #!/bin/bash
 
-git clone git@github.com:aliceui/Alib.git Alib-template
-rm -rf Alib-template/.git
+name = Alib-template
+git clone git@github.com:aliceui/Alib.git $name
+rm -rf $name/.git
 rm Alib-template/Makefile.alipay
-git init Alib-template
+git init $name
