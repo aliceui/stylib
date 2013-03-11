@@ -194,6 +194,10 @@ hr {
     list-style: none;
 }
 
+.side-area li {
+    list-style: none;
+}
+
 .side-area ul li ul {
     display: none;
 }
