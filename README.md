@@ -121,8 +121,8 @@ a {
 
 <div class="alice-modules"></div>
 
-<link type="text/css" rel="stylesheet" media="screen" href="../static/tomorrow.css">
-<script src="../static/google-code-prettify/run_prettify.js"></script>
+<link type="text/css" rel="stylesheet" media="screen" href="static/tomorrow.css">
+<script src="static/google-code-prettify/run_prettify.js"></script>
 
 <script>
 seajs.use(['$', 'gallery/underscore/1.4.3/underscore'], function($, _) {
