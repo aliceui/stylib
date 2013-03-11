@@ -160,7 +160,7 @@ seajs.use(['$', 'gallery/underscore/1.4.3/underscore'], function($, _) {
             // 得到子模块的文档地址
             var ajaxUrl = '';
             if (location.href.indexOf('alipay.im') > 0) {
-                ajaxUrl = 'http://css.alipay.im/' + root + '/' + name;
+                ajaxUrl = 'http://arale.alipay.im/' + root + '/' + name + '/';
             } else {
                 ajaxUrl = '/' + name;
             }
