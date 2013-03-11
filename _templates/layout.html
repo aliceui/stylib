@@ -17,12 +17,37 @@
         {%- endif %}
         <script src="{{static_url('js/arale-helper.js')}}"></script>
         <script src="{{static_url('js/site.js')}}"></script>        
-        {%- include "snippet/head.html" %}
         <!--[if lt IE 9]>
         <script src="{{static_url('js/html5shiv.js')}}"></script>
         <![endif]-->
         {%- endblock %}
         <script>
+        (function() {
+            var data;
+            seajs._package = data = {{config.package|json_encode}}
+            data.dependencies && (delete data.dependencies['$'])
+            data.devDependencies && (delete data.devDependencies['$'])
+
+            seajs.config({ alias: data.dependencies })
+            seajs.config({ alias: data.devDependencies })
+            seajs.config({ alias: {{render_src(writer)}} })
+
+            // for alice
+            for(var dep in data.dependencies) {
+                // 如果依赖的是样式模块
+                if (data.dependencies[dep].indexOf('.css') < 0) {
+                    break;
+                }
+                // 部署在 github 上时
+                if (location.href.indexOf('alipay.im') < 0) {
+                    var array = data.dependencies[dep].split('/');
+                    seajs.use('/' + dep + '/dist/' + array[array.length-1]);
+                } else {    // 部署在内网时
+                    seajs.use(dep);
+                }
+            }
+
+        })();
         seajs.use(['arale/fixed/1.0.0/fixed'], function(Fixed) {
             Fixed('.side-area', 20);
         });
