@@ -153,8 +153,20 @@ seajs.use(['$', 'gallery/underscore/1.4.3/underscore'], function($, _) {
             moduleNode.appendTo('.alice-modules');
             var list = substractTitle(moduleNode.find('h2'));
 
+            // 解析 name 和 root
+            var name = dep[0];
+            var root = dep[1].split('/')[0];
+
+            // 得到子模块的文档地址
+            var ajaxUrl = '';
+            if (location.href.indexOf('alipay.im') > 0) {
+                ajaxUrl = 'http://css.alipay.im/' + root + '/' + name;
+            } else {
+                ajaxUrl = '/' + name;
+            }
+
             $.ajax({
-                url: '/' + dep[0],
+                url: ajaxUrl,
                 dataType: 'html',
                 success: function(data) {
                     data = $(data);
@@ -192,7 +204,6 @@ seajs.use(['$', 'gallery/underscore/1.4.3/underscore'], function($, _) {
         });
     });
 
-    
     function HtmlToCode(html) {
         var code = html;
         code = code.replace(/</g, '&lt;').replace(/>/g, '&gt;');

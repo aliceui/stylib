@@ -13,13 +13,14 @@ watch:
 @nico server -v -C $(THEME)/nico.js --watch
 
 name = `cat package.json | grep name | awk -F'"' '{print $$4}'`
+root = `cat package.json | grep root | awk -F'"' '{print $$4}'`
 html = _site
 tmpfile = tmp.tar.gz
 publish:
     @nico build -v -C $(THEME)/nico.js
     @rm -f ${tmpfile}
     @tar --exclude='.git/*' -czf ${tmpfile} ${html}
-    @curl -F name=${name} -F file=@${tmpfile} http://site.alipay.im/repository/upload/alipay-css
+    @curl -F name=${name} -F file=@${tmpfile} http://site.alipay.im/repository/upload/${root}
     @rm -f ${tmpfile}
 
 clean:

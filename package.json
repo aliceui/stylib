@@ -1,7 +1,7 @@
 {
   "name": "Alib",
   "version": "0.0.1",
-  "root": "",
+  "root": "style",
   "description": "样式库搭建模板",
   "homepage": "http://aliceui.org/Alib",
   "repository": {
