@@ -24,6 +24,6 @@ publish:
 	@rm -f ${tmpfile}
 
 clean:
-@rm -fr _site
+	@rm -fr _site
 
 .PHONY: build-doc debug server publish clean
