@@ -17,11 +17,11 @@ root = `cat package.json | grep root | awk -F'"' '{print $$4}'`
 html = _site
 tmpfile = tmp.tar.gz
 publish:
-    @nico build -v -C $(THEME)/nico.js
-    @rm -f ${tmpfile}
-    @tar --exclude='.git/*' -czf ${tmpfile} ${html}
-    @curl -F name=${name} -F file=@${tmpfile} http://site.alipay.im/repository/upload/${root}
-    @rm -f ${tmpfile}
+	@nico build -v -C $(THEME)/nico.js
+	@rm -f ${tmpfile}
+	@tar --exclude='.git/*' -czf ${tmpfile} ${html}
+	@curl -F name=${root}/${name} -F file=@${tmpfile} http://site.alipay.im/repository/upload/arale
+	@rm -f ${tmpfile}
 
 clean:
 @rm -fr _site
