@@ -200,7 +200,9 @@ seajs.use(['$', 'gallery/underscore/1.4.3/underscore'], function($, _) {
                     }
                 }
             });
-
+        });
+        seajs.use('/static/side', function(side) {
+            side.init();
         });
     });
 
@@ -218,7 +220,7 @@ seajs.use(['$', 'gallery/underscore/1.4.3/underscore'], function($, _) {
         var list = $($('#list-template').html());
         list.find('a').html(item.html() + list.find('a').html());
         list.find('a').attr('href', '#' + item.attr('id'));
-        list.appendTo('.side-area');
+        list.appendTo('.side-area ul');
         return list;
     }
 
