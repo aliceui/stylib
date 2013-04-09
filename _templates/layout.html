@@ -33,18 +33,23 @@
             seajs.config({ alias: {{render_src(writer)}} })
 
             // for alice
-            for(var dep in data.dependencies) {
-                // 如果依赖的是样式模块
-                if (data.dependencies[dep].indexOf('.css') < 0) {
-                    break;
+            var dependencies;
+            if (data.spm && data.spm.alias) {
+                loadCss(data.spm.alias);
+            } else {
+                loadCss(data.dependencies);
+            }
+
+            function loadCss(dependencies) {
+                // for alice
+                var array = [];    
+                for(var dep in dependencies) {
+                    // 如果依赖的是样式模块
+                    if (dependencies[dep].indexOf('.css') > 0) {
+                        array.push("http://assets.spmjs.org/" + dependencies[dep]);
+                    }
                 }
-                // 部署在 github 上时
-                if (location.href.indexOf('alipay.im') < 0) {
-                    var array = data.dependencies[dep].split('/');
-                    seajs.use('/' + dep + '/dist/' + array[array.length-1]);
-                } else {    // 部署在内网时
-                    seajs.use(dep);
-                }
+                seajs.use(array);    
             }
 
         })();
