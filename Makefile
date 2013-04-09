@@ -13,7 +13,7 @@ watch:
 	@nico server -v -C $(THEME)/nico.js --watch
 
 publish: clean build-doc
-	@ghp-import _site -p
+	@spm publish --doc _site
 
 clean:
 	@rm -fr _site
