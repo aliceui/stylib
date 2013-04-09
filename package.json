@@ -11,9 +11,11 @@
   "bugs": {
     "url": "https://github.com/aliceui/Alib/issues"
   },
-  "dependencies": {
-    "box": "alice/box/1.0.0/box.css",
-    "button": "alice/button/1.0.0/button.css",
-    "nav": "alice/nav/1.0.0/nav.css"
+  "spm": {
+      "alias": {
+        "box": "alice/box/1.0.0/box.css",
+        "button": "alice/button/1.0.0/button.css",
+        "nav": "alice/nav/1.0.0/nav.css"
+      }
   }
 }
