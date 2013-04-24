@@ -12,11 +12,11 @@ server:
 watch:
 	@nico server -v -C $(THEME)/nico.js --watch
 
-publish: clean build-doc
-	@spm config source:arale.url http://arale.alipay.im
-	@spm publish --source=arale --doc=_site
+publish-doc: clean build-doc
+	@spm config source.alipay.url http://yuan.alipay.im
+	@spm publish --doc _site -s alipay
 
 clean:
 	@rm -fr _site
 
-.PHONY: build-doc debug server publish clean
+.PHONY: build-doc debug server publish-doc clean
