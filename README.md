@@ -125,7 +125,7 @@ a {
 <script src="static/google-code-prettify/run_prettify.js"></script>
 
 <script>
-seajs.use(['$', 'gallery/underscore/1.4.3/underscore'], function($, _) {
+seajs.use(['$', 'gallery/underscore/1.4.4/underscore'], function($, _) {
 
     $('.alice-modules').on('mouseenter', '.alice-module-demo', function() {
         $(this).find('.alice-module-sourcecode').fadeIn(200);
@@ -207,7 +207,7 @@ seajs.use(['$', 'gallery/underscore/1.4.3/underscore'], function($, _) {
                 }
             });
         });
-        seajs.use('/static/side', function(side) {
+        seajs.use('./static/side', function(side) {
             side.init();
         });
     });
