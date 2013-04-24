@@ -1,10 +1,10 @@
 #!/bin/bash
 
 name=Alib-template
-git clone git@github.com:aliceui/Alib.git $name
+git clone git@github.com:aliceui/Alib.git -b master $name
 cd $name
 rm -rf .git
-rm Makefile.alipay Alib.sh Alib-alipay.sh
+rm Alib.sh
 git init
 git add .
-git commit -am 'first commit'
+git commit -am 'create Alib style.'
