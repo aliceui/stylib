@@ -1,7 +1,7 @@
 #!/bin/bash
 
 name=Alib-template
-git clone git@github.com:aliceui/Alib.git -b master $name
+git clone https://github.com/aliceui/Alib.git -b master $name
 cd $name
 rm -rf .git
 rm Alib.sh
