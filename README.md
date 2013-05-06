@@ -47,6 +47,7 @@
 .alice-module-title a {
     color: #7CAE23;
     cursor: pointer;
+    padding-top: 70px;
 }
 .alice-module-link {
     font-size: 14px;

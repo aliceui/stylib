@@ -116,9 +116,10 @@ hr {
 
 .nav-area .nav-highlight a {
     background: #F19227;
-    text-shadow: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease-out;
+}
+
+.nav-area .nav-highlight a:hover {
+    background: #F19227;
 }
 
 .nav-area a {
@@ -164,7 +165,6 @@ hr {
 .content-area h2 {
     font-size: 22px;
     color: #7CAE23;
-    margin-top: 40px;
 }
 
 .content-area h3 {
