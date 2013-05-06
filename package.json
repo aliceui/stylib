@@ -1,20 +1,24 @@
 {
-  "name": "Alib",
+  "name": "stylib",
   "version": "0.0.1",
-  "family": "style",
+  "family": "alice",
   "description": "样式库搭建模板",
-  "homepage": "http://aliceui.org/Alib",
+  "homepage": "http://aliceui.org/stylib",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aliceui/Alib"
+    "url": "https://github.com/aliceui/stylib"
   },
   "bugs": {
-    "url": "https://github.com/aliceui/Alib/issues"
+    "url": "https://github.com/aliceui/stylib/issues"
   },
   "spm": {
       "alias": {
         "box": "alice/box/1.0.0/box.css",
         "button": "alice/button/1.0.0/button.css",
+        "tab": "alice/tab/1.0.0/tab.css",
+        "poptip": "alice/poptip/1.0.0/poptip.css",
+        "tiptext": "alice/tiptext/1.0.1/tiptext.css",
+        "tipbox": "alice/tipbox/1.0.0/tipbox.css",
         "nav": "alice/nav/1.0.0/nav.css"
       }
   }

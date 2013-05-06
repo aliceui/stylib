@@ -23,7 +23,7 @@ hr {
     background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0)); 
 }
 
- .content blockquote {
+.content blockquote {
     border-left: 0.4em solid #DDDDDD;
     color: #888;
     margin: 15px 0;
@@ -71,183 +71,85 @@ hr {
 
 /* --- */
 
-#body-wrapper {
-    max-width: 100%;    
-    padding-top: 0;
-}
-
-#footer-wrapper {
-    width: 1040px;
-    max-width: 1040px;
-    font-family: "Marcellus",sans-serif;
-}
-
-/* - - - - - - - */
-
-.head-area {
-    padding-top: 20px;
-    background: #fff;
-}
-
-.title-area {
-    margin: 0 auto;
-    padding-top: 15px;
-    width: 250px;
-    height: 120px;
-    background: #fff url(alice.png) 130px 0 no-repeat;    
-}
-
-.title-area h1 {
-    font-size: 48px;
-    margin: 0;
-    line-height: 60px;
-}
-
-.title-area h1 a {
-    color: #7CAE23;
-}
-
-.title-area h1 a:hover {
-    opacity: 0.8;
-    text-decoration: none;
-}
-
-.title-area .description {
-    margin: 0;
-    color: #999;
-    font-size: 12px;
-}
-
-.nav-area {
-    font-size: 16px;
-    height: 60px;
-    color: #888;
-    margin-bottom: 15px;
-    background: #FBFFD7;
-    border-top: 4px solid #9ACD4B;
-}
-
-.main-nav {
-    list-style-position: inside;
-    line-height: 36px;
-    margin: 0 auto;
-    padding: 0;
-    margin-top: 10px;
-    width: 1040px;
-    position: relative;    
-}
-
-.main-nav li {
-    margin: 0 20px 0 10px;
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    font-weight: bold;
-}
-
-.main-nav li.alice-ui {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-right: 10px;
-}
-
-.main-nav .iconfont {
-    font-size: 16px;
-    color: #75A26D;
-}
-
-.main-nav a {
-    color: #668430;
-}
-
-.main-nav a:hover {
-    opacity: 0.8;
-}
-
-.main-area {
-    width: 1040px;
-    margin: 30px auto 0;
-    position: relative;
+.content-wrapper {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .content-area {
     background: #fff;
     border: 1px solid #ddd;
-    padding: 0 29px;
-    width: 760px;
-    margin-left: 220px;
+    padding: 25px 29px 0;
 }
 
-.side-area {
-    overflow: hidden;
-    position: absolute;
+.nav-area {
+    width: 100%;
+    padding: 22px 0 0;
+    z-index: 10;
+    background: #fdfdfd;
+    position: fixed;
     top: 0;
-    width: 200px;
-    background: #fff;
-    border-bottom: 1px solid #ddd;
 }
 
-.side-area ul {
+.nav-area ul {
     padding: 0;
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     list-style: none;
 }
 
-.side-area li {
+.nav-area li {
     list-style: none;
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 6px;
+    transition: width 0.2s ease-out 0.2s;
 }
 
-.side-area ul li ul {
+.nav-area li.title a {
+    background: #508BDD;
+}
+
+.nav-area ul li ul {
     display: none;
 }
 
-.side-area .side-highlight a {
-    background: #FBFFD7;
+.nav-area .nav-highlight a {
+    background: #F19227;
     text-shadow: none;
     font-weight: bold;
-    transition: background-color 0.8s ease-out;
+    transition: background-color 0.3s ease-out;
 }
 
-.side-area .side-highlight a:hover {
-    background: #FBFFD7;
-}
-
-.side-loading {
-    height: 100px;
-    text-align: center;
-    line-height: 100px;
-    border: 1px solid #ddd;
-    border-bottom: none;
-}
-
-.side-area a {
+.nav-area a {
     font-size: 14px;
+    padding: 5px 12px;
+    background: #80B424;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 2px;
     display: block;
-    padding: 8px 15px;
-    border: 1px solid #ddd;
-    border-bottom: none;
-    position: relative;
-    text-shadow: 0 1px 2px #eee;
-    color: #7CAE23;
 }
 
-.side-area a .iconfont {
-    color: #aaa;
-    position: absolute;
-    right: 12px;
-    top: 11px;
+.nav-area a .iconfont {
+    color: #eee;
+    margin-left: 6px;
     font-size: 12px;
-    line-height: 14px;    
 }
 
-.side-area a:hover {
-    background: #f8f8f8;
+.nav-area a:hover {
+    background: #95CC34;
     text-decoration: none;
 }
 
-.side-area a:hover .iconfont {
+.nav-area a:hover .iconfont {
     color: #aaa;
+}
+
+.main-area {
+    margin-top: 80px;
+    margin-bottom: 25px;
 }
 
 .content-area h1 {
