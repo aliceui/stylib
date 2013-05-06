@@ -25,6 +25,14 @@ define(function(require, exports, module) {
             $('.nav-area .nav-highlight').removeClass('nav-highlight');
             $('.nav-area > ul > li:not(.title)').eq(i).addClass('nav-highlight');
         });
+
+        // 计算一下 nav 的高度
+        var culTop = function() {
+            $('.main-area').css('margin-top', $('.nav-area').height() + 30);
+        };
+        culTop();
+        $(window).resize(culTop);
+
     };
 
 });
