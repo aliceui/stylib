@@ -13,7 +13,8 @@ watch:
 	@nico server -v -C $(THEME)/nico.js --watch
 
 publish-doc: clean build-doc
-	@spm publish --doc _site
+	@spm config source.alipay.url http://yuan.alipay.im
+	@spm publish --doc _site -s alipay
 
 clean:
 	@rm -fr _site
