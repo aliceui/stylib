@@ -104,7 +104,6 @@ hr {
     display: inline-block;
     margin-right: 8px;
     margin-bottom: 6px;
-    transition: width 0.2s ease-out 0.2s;
 }
 
 .nav-area li.title a {
@@ -130,6 +129,7 @@ hr {
     font-weight: bold;
     border-radius: 2px;
     display: block;
+    transition: all 0.3s ease-out;    
 }
 
 .nav-area a .iconfont {
@@ -141,10 +141,6 @@ hr {
 .nav-area a:hover {
     background: #95CC34;
     text-decoration: none;
-}
-
-.nav-area a:hover .iconfont {
-    color: #aaa;
 }
 
 .main-area {
