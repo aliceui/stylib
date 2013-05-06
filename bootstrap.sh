@@ -4,4 +4,4 @@ name=stylib
 git clone https://github.com/aliceui/stylib.git -b alipay $name
 cd $name
 rm -rf .git
-rm stylib.sh
+rm bootstrap.sh
