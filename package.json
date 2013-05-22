@@ -2,6 +2,9 @@
   "name": "stylib",
   "version": "0.0.1",
   "family": "alice",
+  "keywords": [
+    "alipay"
+  ],
   "description": "样式库搭建模板",
   "homepage": "http://aliceui.org/stylib",
   "repository": {
