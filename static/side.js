@@ -1,6 +1,7 @@
 define(function(require, exports, module) {
 
     var $ = require('$');
+    var sticky = require('arale/sticky/1.1.0/sticky');
     
     exports.init = function() {
         var titles = $('.content-area > .content > h2, h2.alice-module-title');
@@ -26,12 +27,7 @@ define(function(require, exports, module) {
             $('.nav-area > ul > li:not(.title)').eq(i).addClass('nav-highlight');
         });
 
-        // 计算一下 nav 的高度
-        var culTop = function() {
-            $('.main-area').css('margin-top', $('.nav-area').height() + 30);
-        };
-        culTop();
-        $(window).resize(culTop);
+        sticky('.nav-area', -1).render();
 
     };
 

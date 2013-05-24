@@ -33,7 +33,7 @@
     padding: 0;
     margin-top: 20px;
     margin-bottom: 50px;
-    font:12px/1.5 tahoma,arial,Hiragino Sans GB,"Microsoft Yahei",\5b8b\4f53;
+    font:12px/1.5 tahoma,arial,Hiragino Sans GB,\5b8b\4f53;
 }
 .alice-module-head {
     overflow: hidden;
