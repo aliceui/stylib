@@ -117,9 +117,6 @@ a {
 
 <div class="alice-modules"></div>
 
-<link type="text/css" rel="stylesheet" media="screen" href="static/tomorrow.css">
-<script src="static/google-code-prettify/run_prettify.js"></script>
-
 <script>
 seajs.use(['$', 'gallery/underscore/1.4.4/underscore'], function($, _) {
 
@@ -132,9 +129,15 @@ seajs.use(['$', 'gallery/underscore/1.4.4/underscore'], function($, _) {
     $('.alice-modules').on('click', '.alice-module-sourcecode', function() {
         var code = $(this).parent().find('.alice-module-code');
         if (code.is(':hidden')) {
-            code.slideDown(200);
+            code.animate({
+                opacity: 1,
+                height: 'toggle'
+            }, 300);
         } else {
-            code.slideUp(200);
+            code.animate({
+                opacity: 0,
+                height: 'toggle'
+            }, 300);
         }
     });
 
@@ -189,11 +192,14 @@ seajs.use(['$', 'gallery/underscore/1.4.4/underscore'], function($, _) {
                         if (item.prev()[0].tagName !== 'H3' || !subtitle) {
                             subtitle = '默认';
                         }
-                        var code = HtmlToCode(item.html());
                         
                         demoNode.find('.alice-module-subtitle').html(subtitle);
                         demoNode.find('.alice-module-dom').html(item.html());
-                        demoNode.find('.alice-module-code').html(code);
+
+                        // 直接使用目标页面生成的高亮代码，不再动态渲染
+                        var codeHtml = item.next('.highlight').find('pre').html();
+                        demoNode.find('.alice-module-code').html(codeHtml); 
+
                         moduleNode.find('.alice-loading').remove();
                         demoNode.appendTo(moduleNode);
                     });
@@ -212,14 +218,6 @@ seajs.use(['$', 'gallery/underscore/1.4.4/underscore'], function($, _) {
             side.init();
         });
     });
-
-    function HtmlToCode(html) {
-        var code = html;
-        code = code.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        code = code.replace(/^\s*\n/, '').replace(/\n\s*$/, '');
-        code = PR.prettyPrintOne(code, 'html', false);
-        return code;
-    } 
 
     function substractTitle(item) {
         $('.nav-loading').remove();
