@@ -154,7 +154,7 @@ seajs.use(['$', 'gallery/underscore/1.4.4/underscore'], function($, _) {
             var match = dep[1].match(reg);
 
             // 解析 name 和 family
-            var family = match[1];            
+            var family = match[1];
             var name = match[2];
             var version = match[3];
 
